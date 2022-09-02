@@ -1,4 +1,4 @@
-import { Link, Stack, Typography } from "@mui/material";
+import { Link, Stack } from "@mui/material";
 import React from "react";
 import logo from "../../images/logo.png";
 import { SearchBar } from "../../Components";
