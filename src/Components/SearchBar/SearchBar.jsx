@@ -10,11 +10,11 @@ const SearchBar = () => {
         onSubmit={() => {}}
         sx={{
           borderRadius: 20,
-          border: "1px solid black",
+          border: "1px solid #D97EF2",
           pl: 2,
           boxShadow: "none",
           mr: { sm: 5 },
-          backgroundColor: "#400B75",
+          background: "transparent",
           color: "white",
         }}
       >
@@ -24,14 +24,14 @@ const SearchBar = () => {
           value=""
           onChange={() => {}}
           style={{
-            backgroundColor: "#400B75",
+            backgroundColor: "transparent",
             color: "white",
           }}
         />
         <IconButton
           sx={{
             p: "10px",
-            color: "red",
+            color: "#D97EF2",
           }}
         >
           <Search />

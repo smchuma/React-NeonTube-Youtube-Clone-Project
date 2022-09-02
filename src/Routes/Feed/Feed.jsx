@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Stack, Typography } from "@mui/material";
-import { SideBar } from "../../Components";
+import { SideBar, Videos } from "../../Components";
 
 const Feed = () => {
   return (
@@ -23,6 +23,25 @@ const Feed = () => {
         >
           &copy; 2022 NeonTube
         </Typography>
+      </Box>
+      <Box
+        sx={{
+          p: 2,
+          height: "90vh",
+          overFlowY: "auto",
+          flex: 2,
+        }}
+      >
+        <Typography
+          variant="h4"
+          fontWeight="bold"
+          mb={2}
+          sx={{ color: "white" }}
+        >
+          New
+          <span style={{ color: "#D363F2" }}> Videos</span>
+        </Typography>
+        <Videos />
       </Box>
     </Stack>
   );
