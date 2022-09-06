@@ -1,8 +1,9 @@
-import { IconButton, Link, Stack, Typography } from "@mui/material";
+import { IconButton, Stack, Typography } from "@mui/material";
 import React from "react";
 import logo from "../../images/logo.png";
 import { SearchBar } from "../../Components";
 import MenuIcon from "@mui/icons-material/Menu";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -19,18 +20,18 @@ const Navbar = () => {
           boxShadow: "1px 20px 100px #964bff",
         }}
       >
+        <MenuIcon sx={{ color: "white" }} />
         <Link to="/" style={{ display: "flex", alignItems: "center" }}>
-          <IconButton sx={{ color: "white" }}>
-            <MenuIcon />
+          <IconButton disableRipple="true" sx={{ color: "white", mr: "35rem" }}>
+            <img src={logo} alt="NeonTube" height={50} />
+            <Typography
+              variant="h6"
+              sx={{ color: "white" }}
+              className="logo-text"
+            >
+              NeonTube
+            </Typography>
           </IconButton>
-          <img src={logo} alt="NeonTube" height={50} />
-          <Typography
-            variant="h6"
-            sx={{ color: "white" }}
-            className="logo-text"
-          >
-            NeonTube
-          </Typography>
         </Link>
         <SearchBar />
       </Stack>
