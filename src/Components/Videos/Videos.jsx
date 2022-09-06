@@ -1,16 +1,29 @@
 import React from "react";
-import { Box, Stack } from "@mui/material";
+import { Box, CircularProgress, Stack } from "@mui/material";
 import { VideoCard, ChannelCard } from "../../Components";
 
-const Videos = ({ videos }) => {
+const Videos = ({ videos, loading }) => {
   return (
     <Stack direction="row" flexWrap="wrap" justifyContent="start" gap={2}>
-      {videos.map((item, index) => (
-        <Box key={index}>
-          {item.id.videoId && <VideoCard video={item} />}
-          {item.id.channelId && <ChannelCard channelDetail={item} />}
-        </Box>
-      ))}
+      {!videos ? (
+        <CircularProgress
+          color="secondary"
+          size={200}
+          thickness={0.8}
+          value={100}
+          sx={{
+            mx: "22rem",
+            my: "10rem",
+          }}
+        />
+      ) : (
+        videos.map((item, index) => (
+          <Box key={index}>
+            {item.id.videoId && <VideoCard video={item} />}
+            {item.id.channelId && <ChannelCard channelDetail={item} />}
+          </Box>
+        ))
+      )}
     </Stack>
   );
 };

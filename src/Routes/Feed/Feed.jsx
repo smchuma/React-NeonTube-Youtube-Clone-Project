@@ -7,11 +7,14 @@ import { useEffect, useState } from "react";
 const Feed = () => {
   const [selectedCategory, setSelectedCategory] = useState("New");
   const [videos, setVideos] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    setLoading(true);
     fetchApi(`search?part=snippet&q=${selectedCategory}`).then((data) =>
       setVideos(data.items)
     );
+    setLoading(false);
   }, [selectedCategory]);
 
   return (
@@ -55,7 +58,7 @@ const Feed = () => {
           {selectedCategory}
           <span style={{ color: "#D363F2" }}> Videos</span>
         </Typography>
-        <Videos videos={videos} />
+        <Videos videos={videos} loading={loading} />
       </Box>
     </Stack>
   );
