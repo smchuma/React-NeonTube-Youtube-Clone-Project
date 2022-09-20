@@ -30,7 +30,7 @@ const VideoCard = ({ video }) => {
           sx={{ width: 350, height: 180 }}
         />
       </Link>
-      <CardContent sx={{ backgroundColor: "#6f0da0", height: "106px" }}>
+      <CardContent sx={{ backgroundColor: "#030140", height: "106px" }}>
         <Link to={videoId ? `/video/${videoId}` : `demoVideoUrl`}>
           <Typography variant="subtitle1" fontWeight="bold" color="white">
             {snippet?.title.slice(0, 60) || demoVideoTitle.slice(0, 60)}
@@ -43,7 +43,7 @@ const VideoCard = ({ video }) => {
               : `demoChannelUrl`
           }
         >
-          <Typography variant="subtitle2" fontWeight="bold" color="#c8afff">
+          <Typography variant="subtitle2" fontWeight="bold" color="#06B1DD">
             {snippet?.channelTitle.slice(0, 60) || demoChannelTitle}
             <CheckCircle
               sx={{

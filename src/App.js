@@ -7,7 +7,7 @@ import { Feed, SearchFeed, VideoDetail, ChannelDetail } from "./Routes";
 const App = () => {
   return (
     <Box
-      sx={{ background: "linear-gradient(to bottom right, #290656, #44118C)" }}
+      sx={{ background: "linear-gradient(to bottom right, #010326, #030140)" }}
     >
       <Navbar />
       <Routes>
