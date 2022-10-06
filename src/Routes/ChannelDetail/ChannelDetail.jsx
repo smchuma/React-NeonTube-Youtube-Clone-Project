@@ -18,7 +18,6 @@ const ChannelDetail = () => {
     );
   }, [id]);
 
-  console.log(channelDetail, videos);
   return (
     <Box minHeight="95vh">
       <Box>

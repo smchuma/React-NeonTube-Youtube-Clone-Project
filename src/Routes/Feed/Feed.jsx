@@ -23,7 +23,7 @@ const Feed = () => {
         sx={{
           height: { sx: "auto", md: "92vh" },
           borderRight: "1px solid #010326",
-          px: { sx: 0, md: 2 },
+          px: { sx: 0, md: 5 },
         }}
       >
         <SideBar

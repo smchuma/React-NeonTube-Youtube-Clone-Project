@@ -2,9 +2,14 @@ import React from "react";
 import { Box, CircularProgress, Stack } from "@mui/material";
 import { VideoCard, ChannelCard } from "../../Components";
 
-const Videos = ({ videos, loading }) => {
+const Videos = ({ videos, loading, direction }) => {
   return (
-    <Stack direction="row" flexWrap="wrap" justifyContent="start" gap={2}>
+    <Stack
+      direction={direction || "row"}
+      flexWrap="wrap"
+      justifyContent="start"
+      gap={2}
+    >
       {!videos ? (
         <CircularProgress
           color="secondary"

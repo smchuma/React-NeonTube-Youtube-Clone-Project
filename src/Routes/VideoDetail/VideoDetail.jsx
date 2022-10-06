@@ -5,7 +5,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import ReactPlayer from "react-player";
 import { Link, useParams } from "react-router-dom";
-import { ChannelCard } from "../../Components";
+import { ChannelCard, Videos } from "../../Components";
 import { fetchApi } from "../../utils/FetchApi";
 import RecommendIcon from "@mui/icons-material/Recommend";
 
@@ -34,7 +34,7 @@ const VideoDetail = () => {
 
   return (
     <Box minHeight="95vh">
-      <Stack direction={{ xs: "column", md: "row" }}>
+      <Stack direction={{ xs: "column", lg: "row" }}>
         <Box flex={1}>
           <Box sx={{ width: "100%", position: "sticky", top: "86px" }}>
             <ReactPlayer
@@ -54,7 +54,7 @@ const VideoDetail = () => {
               >
                 {title}
               </Typography>
-              <Stack direction="row" gap="20px">
+              <Stack direction="row" gap="10px">
                 <Typography
                   color="#fff"
                   variant="body1"
@@ -65,17 +65,11 @@ const VideoDetail = () => {
                 </Typography>
                 <RecommendIcon
                   sx={{
-                    fontSize: "25px",
-
+                    fontSize: "22px",
                     color: "white",
                   }}
                 />
-                <Typography
-                  color="#fff"
-                  variant="body1"
-                  // px={1}
-                  sx={{ opacity: 0.7 }}
-                >
+                <Typography color="#00f2ff" variant="body1">
                   {parseInt(likeCount).toLocaleString()} likes
                 </Typography>
               </Stack>
@@ -93,7 +87,7 @@ const VideoDetail = () => {
                 {/* <ChannelCard /> */}
                 <Typography
                   variant={{ sm: "subtitle", md: "h6" }}
-                  color="#06B1DD"
+                  color="#b2f0ff"
                 >
                   {channelTitle}
                   <CheckCircle
@@ -107,15 +101,15 @@ const VideoDetail = () => {
             </Stack>
           </Box>
         </Box>
+        <Box
+          px={2}
+          py={{ md: 1, xs: 5 }}
+          justifyContent="center"
+          alignItems="center"
+        >
+          <Videos videos={videos} direction="column" />
+        </Box>
       </Stack>
-      <Box
-        px={2}
-        py={{ md: 1, xs: 5 }}
-        justifyContent="center"
-        alignItems="center"
-      >
-        sssssssssssssssss
-      </Box>
     </Box>
   );
 };

@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <div>
+    <>
       <Stack
         direction="row"
         alignItems="center"
@@ -20,7 +20,6 @@ const Navbar = () => {
           boxShadow: "1px 20px 100px #964bff",
         }}
       >
-        <MenuIcon sx={{ color: "white" }} />
         <Link to="/" style={{ display: "flex", alignItems: "center" }}>
           <IconButton disableRipple="true" sx={{ color: "white", mr: "35rem" }}>
             <img src={logo} alt="NeonTube" height={50} />
@@ -35,7 +34,7 @@ const Navbar = () => {
         </Link>
         <SearchBar />
       </Stack>
-    </div>
+    </>
   );
 };
 
