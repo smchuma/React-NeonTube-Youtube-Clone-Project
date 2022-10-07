@@ -5,7 +5,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import ReactPlayer from "react-player";
 import { Link, useParams } from "react-router-dom";
-import { ChannelCard, Videos } from "../../Components";
+import { Videos } from "../../Components";
 import { fetchApi } from "../../utils/FetchApi";
 import RecommendIcon from "@mui/icons-material/Recommend";
 
@@ -36,11 +36,12 @@ const VideoDetail = () => {
     <Box minHeight="95vh">
       <Stack direction={{ xs: "column", lg: "row" }}>
         <Box flex={1}>
-          <Box sx={{ width: "100%", position: "sticky", top: "86px" }}>
+          <Box sx={{ width: "100%", top: "86px" }}>
             <ReactPlayer
               url={`https://www.youtube.com/watch?v=${id}`}
               className="react-player"
               controls
+              onClickPreview={() => window.scrollTo(0, 300)}
             />
             <Box
               sx={{ borderBottom: "1px solid #331B8C", paddingBottom: "10px" }}
@@ -55,6 +56,18 @@ const VideoDetail = () => {
                 {title}
               </Typography>
               <Stack direction="row" gap="10px">
+                <Link to={`/channel/${channelId}`}>
+                  <Typography
+                    px={3}
+                    variant={{ sm: "subtitle", md: "h6" }}
+                    color="#b2f0ff"
+                  >
+                    {channelTitle}
+                    <CheckCircle
+                      sx={{ fontSize: "12px", color: "#06B1DD", ml: "5px" }}
+                    />
+                  </Typography>
+                </Link>
                 <Typography
                   color="#fff"
                   variant="body1"
@@ -83,18 +96,6 @@ const VideoDetail = () => {
                 px: 3,
               }}
             >
-              <Link to={`/channel/${channelId}`}>
-                {/* <ChannelCard /> */}
-                <Typography
-                  variant={{ sm: "subtitle", md: "h6" }}
-                  color="#b2f0ff"
-                >
-                  {channelTitle}
-                  <CheckCircle
-                    sx={{ fontSize: "12px", color: "#06B1DD", ml: "5px" }}
-                  />
-                </Typography>
-              </Link>
               <Stack>
                 <Typography variant="body1" sx={{ opacity: 0.7 }}></Typography>
               </Stack>
@@ -106,10 +107,9 @@ const VideoDetail = () => {
           py={{ md: 1, xs: 5 }}
           justifyContent="center"
           alignItems="center"
-        >
-          <Videos videos={videos} direction="column" />
-        </Box>
+        ></Box>
       </Stack>
+      <Videos videos={videos} paddingLeft="10px" />
     </Box>
   );
 };

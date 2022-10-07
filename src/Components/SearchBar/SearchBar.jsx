@@ -25,6 +25,9 @@ const SearchBar = () => {
         mr: { sm: 5 },
         background: "transparent",
         color: "white",
+
+        height: "20%",
+        mt: "10px",
       }}
     >
       <input

@@ -21,25 +21,15 @@ const Feed = () => {
     <Stack sx={{ flexDirection: { sx: "column", md: "row" } }}>
       <Box
         sx={{
-          height: { sx: "auto", md: "92vh" },
+          height: { sx: "auto", md: "100vh" },
           borderRight: "1px solid #010326",
-          px: { sx: 0, md: 5 },
+          px: { sx: 0, md: 1 },
         }}
       >
         <SideBar
           selectedCategory={selectedCategory}
           setSelectedCategory={setSelectedCategory}
         />
-        <Typography
-          variant="body2"
-          className="copyright"
-          sx={{
-            color: "white",
-            mt: 1.5,
-          }}
-        >
-          &copy; 2022 NeonTube
-        </Typography>
       </Box>
       <Box
         sx={{

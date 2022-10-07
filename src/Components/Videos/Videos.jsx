@@ -2,12 +2,13 @@ import React from "react";
 import { Box, CircularProgress, Stack } from "@mui/material";
 import { VideoCard, ChannelCard } from "../../Components";
 
-const Videos = ({ videos, loading, direction }) => {
+const Videos = ({ videos, direction, paddingLeft }) => {
   return (
     <Stack
       direction={direction || "row"}
       flexWrap="wrap"
       justifyContent="start"
+      paddingLeft={paddingLeft}
       gap={2}
     >
       {!videos ? (

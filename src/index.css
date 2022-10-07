@@ -45,12 +45,14 @@ a {
 .react-player {
   height: 77vh !important;
   width: 100% !important;
+  padding-left: 10px;
 }
 
 .search-bar {
   outline: none;
   border: none;
-  width: 350px;
+  width: 500px;
+  height: 100% !important;
 }
 
 .category-btn {
@@ -100,5 +102,11 @@ a {
   }
   .search-bar {
     width: 200px;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .search-bar {
+    display: none;
   }
 }
